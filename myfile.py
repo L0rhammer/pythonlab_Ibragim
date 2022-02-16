@@ -1,9 +1,8 @@
-import ast
-
 doc = 'C:\\Users\\ashchyrenko\\Documents\\123.json'
 
-class file(doc):
- def FileChecks(doc):  
+class file:
+ def FileChecks(doc):
+  from ast import literal_eval  
   try:
     data = open(doc, 'r')
   except IOError:
@@ -14,10 +13,15 @@ class file(doc):
         print("File is empty")
     else:
         formatted_content = content.replace("\n","") #converting file content in one liner
-        my_dic = ast.literal_eval(formatted_content) #converting str to dictionary
+        my_dic = literal_eval(formatted_content) #converting str to dictionary
+        #print(type(my_dic))
+        #print(my_dic)
         name=[*my_dic] #get name keys
+        print(type(name))
+        print(name)
         name_content = my_dic[name[0]] 
-        #print(name_content)
+        print(type(name_content))
+        print(name_content)
         if type(name_content) != dict:
             print ('Data structure corrupted')
         else:
@@ -34,7 +38,7 @@ class file(doc):
                 else:
                     tasks_name=[*tasks_content]
                     pmo13=tasks_content[tasks_name[0]]
-                    print(list(pmo13.values()))
+                    #print(list(pmo13.values()))
 
 
 

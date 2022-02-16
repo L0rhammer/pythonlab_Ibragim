@@ -25,7 +25,7 @@ while k2 < k1:
     first_list.append(x)
     temp_list.remove(x)
     k2 += 1
-#print(first_list)
+print(first_list)
 
 #M 3. 2nd list modification.
 second_list.clear()
@@ -36,3 +36,6 @@ for x in third_list:
      pass
 second_list = [x for x in temp_list if not x.isdigit()]    
 print(second_list)
+
+#if length of list is 0 - gen FAIL
+#if no lists gen FAIL
